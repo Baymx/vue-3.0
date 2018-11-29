@@ -1,0 +1,103 @@
+@charset "utf-8";
+
+@import "./_parts/variables";
+@import "./_parts/mixin";
+@import "./_parts/fonts";
+
+body {
+    background-color: $lx-core-bg-color;
+    font-family: 'PingFangSC';
+    font-size: 13px;
+    color: $lx-core-font-color;
+    -webkit-overflow-scrolling : touch;
+}
+* {
+        margin: 0;
+        padding: 0;
+}
+li{
+        list-style: none;
+}
+a,a:hover {
+        text-decoration: none;
+}
+input{
+    border: none
+}
+//表单公共样式
+form{
+    background: #ffffff;
+    .form-item {
+      padding: 0px 20px;
+      display: inline-flex;
+      width: 100%;
+      box-sizing: border-box;
+      label {
+        display: block;
+        width: 25%;
+        height: 50px;
+        line-height: 50px;
+        font-family: PingFangSC-Regular;
+        font-size: 15px;
+        color: #333333;
+        letter-spacing: -0.34px;
+        text-align: center;
+      }
+      input, textarea, select {
+        width: 75%;
+        height: 50px;
+        font-size: 14px;
+        padding-left: 20px;
+        border-radius: 5px;
+        box-sizing: border-box;
+        color: #000000;
+        -webkit-text-fill-color: #666;
+        // caret-color: #ef8b36;
+        // -moz-caret-color: #ef8b36;
+        // -webkit-caret-color: #ef8b36;
+        // -o-caret-color: #ef8b36;
+        position: relative;
+        z-index: 2;
+        border: #ccc 1px solid;
+      }
+      @supports (-webkit-mask: none) and (not (cater-color: #ef8b36)) {
+        input {
+          color: #ef8b36;
+        }
+      }
+      input::-webkit-input-placeholder, textarea::-webkit-input-placeholder {
+        /* WebKit browsers */
+        color: #666;
+      }
+      input:-moz-placeholder, textarea:-moz-placeholder {
+        /* Mozilla Firefox 4 to 18 */
+        color: #666;
+      }
+      input::-moz-placeholder, textarea::-moz-placeholder {
+        /* Mozilla Firefox 19+ */
+        color: #666;
+      }
+      input:-ms-input-placeholder, textarea:-ms-input-placeholder {
+        /* Internet Explorer 10+ */
+        color: #666;
+      }
+      span {
+        font-family: 'lx-iconfont';
+        color: #888;
+        position: absolute;
+        right: 10px;
+        line-height: 50px;
+        display: inline-flex;
+        justify-content: flex-end;
+        width: 12px;
+        z-index: 0;
+      }
+      input:disabled {
+        background-color: #fff; //修改默认灰色样式
+        color: #000000;
+        opacity: 1; //默认的不透明级别为0.3
+        /*-webkit-text-fill-color:#000000; //字体颜色安卓与IOS适配*/
+        -webkit-opacity: 1; //不透明级别安卓与IOS适配
+      }
+    }
+  }
