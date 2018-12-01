@@ -1,5 +1,5 @@
 <template>
-  <div class="login">
+  <div class="login" :style="getStyle">
       <form>
           <div class="form-item">
                 <label>用户名</label>
@@ -14,7 +14,9 @@
 </template>
 
 <script lang="ts">
-import { Component, Provide, Vue } from "vue-property-decorator";
+import Component from "vue-class-component";
+import { Provide, Vue } from "vue-property-decorator";
+import { State, Getter, Action, Mutation } from "vuex-class";
 @Component({
   components: {}
 })
@@ -24,20 +26,29 @@ export default class Login extends Vue {
   @Provide() obj: Object = {};
   @Provide() msg: string = "";
   @Provide() asd: string = "233";
-
+  @Getter("getterClient") public client: any;
   mounted() {
     this.message();
+    console.log(Getter);
+    console.log(this.client.width);
   }
   get chang() {
     return this.asd + "xiaoxio";
   }
   message() {}
+  get getStyle() {
+    return {
+      width: this.client.width + "px",
+      height: this.client.height + "px"
+    };
+  }
 }
 </script>
 
 <style lang="scss" scoped>
 .login {
   background: #ffffff;
+  overflow: hidden;
   form {
     margin-top: 100px;
     .form-item {

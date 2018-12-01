@@ -6,11 +6,16 @@
     "jsx": "preserve",
     "importHelpers": true,
     "moduleResolution": "node",
-    "experimentalDecorators": true,
     "esModuleInterop": true,
     "allowSyntheticDefaultImports": true,
     "sourceMap": true,
+    "strictNullChecks":false,
     "baseUrl": ".",
+    // 启用 vue-class-component 及 vuex-class 需要开启此选项
+    "experimentalDecorators": true,
+
+    // 启用 vuex-class 需要开启此选项
+    "strictFunctionTypes": false,
     "types": [
       "webpack-env",
       "jest"
@@ -24,7 +29,9 @@
       "esnext",
       "dom",
       "dom.iterable",
-      "scripthost"
+      "scripthost",
+      "es5", 
+      "es6"
     ]
   },
   "include": [
