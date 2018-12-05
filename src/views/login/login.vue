@@ -47,7 +47,6 @@ export default class Login extends Vue {
 
 <style lang="scss" scoped>
 .login {
-  background: #ffffff;
   overflow: hidden;
   form {
     margin-top: 100px;

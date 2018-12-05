@@ -1,6 +1,8 @@
 <template>
   <div class="home">
-    hello
+    <div class="header">
+
+    </div>
   </div>
 </template>
 
@@ -15,3 +17,17 @@ export default class Home extends Vue {
   @Provide() msg: string = "";
 }
 </script>
+<style lang="scss" scoped>
+.home{
+  .header{
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 102;
+    width: 100%;
+    height: 12.8vw;
+    padding: 4vw;
+    background: rgba(255,255,255,0.9);
+  }
+}
+</style>

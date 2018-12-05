@@ -1,3 +1,24 @@
+
+const cssLoader = {
+    loader: 'css-loader',
+    options: {
+      sourceMap: options.sourceMap
+    }
+  }
+
+  var postcssLoader = {
+    loader: 'postcss-loader',
+    options: {
+      sourceMap: options.sourceMap
+    }
+  }
+  var px2remLoader = {
+    loader: 'px2rem-loader',
+    options: {
+      remUnit: 37.5
+    }
+  }
+
 module.exports = {
     // 基本路径
     baseUrl: '/',
@@ -37,6 +58,12 @@ module.exports = {
     // PWA 插件相关配置
     // see https://github.com/vuejs/vue-cli/tree/dev/packages/%40vue/cli-plugin-pwa
     pwa: {},
+    module: {
+        rules: [
+          { test: /\.css$/, use: 'css-loader' },
+          { test: /\.ts$/, use: 'ts-loader' }
+        ]
+      },
     // webpack-dev-server 相关配置
     devServer: {
         open: process.platform === 'darwin',
