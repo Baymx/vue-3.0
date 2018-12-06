@@ -25,8 +25,8 @@ export default class Home extends Vue {
     left: 0;
     z-index: 102;
     width: 100%;
-    height: 12.8vw;
-    padding: 4vw;
+    height: 30px;
+    padding: 10px;
     background: rgba(255,255,255,0.9);
   }
 }

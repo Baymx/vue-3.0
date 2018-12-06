@@ -10,8 +10,19 @@
     "test:e2e": "vue-cli-service test:e2e",
     "my": "npm run build;scp -r dist/* root@94.191.77.140:/data/app/"
   },
+  "postcss": {
+    "plugins": {
+      "autoprefixer": {},
+      "postcss-pxtorem": {
+        "rootValue": 37.5,
+        "propList": ["*"]
+      }
+    }
+  },
   "dependencies": {
     "eslint-loader": "^2.1.1",
+    "postcss-px-to-viewport": "0.0.3",
+    "postcss-pxtorem": "^4.0.1",
     "vue": "^2.5.17",
     "vue-class-component": "^6.0.0",
     "vue-property-decorator": "^7.0.0",
@@ -35,6 +46,7 @@
     "babel-eslint": "^10.0.1",
     "eslint": "^5.8.0",
     "eslint-plugin-vue": "^5.0.0-0",
+    "lib-flexible": "^0.3.2",
     "node-sass": "^4.9.0",
     "sass-loader": "^7.0.1",
     "ts-jest": "^23.0.0",
